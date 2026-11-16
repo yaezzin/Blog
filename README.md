@@ -53,11 +53,10 @@ draft: true                 # 선택: true면 목록에서 숨김
 
 `.vitepress/categories.ts`에서 폴더명별 표시 이름(label)과 순서(order)를 정합니다. 등록하지 않은 폴더도 자동으로 노출되고, 이름은 폴더명 그대로 쓰입니다.
 
-## 폰트와 읽기 설정
+## 폰트와 상단 링크
 
-- 기본 본문 폰트: Pretendard
-- 상단 `가A` 버튼으로 독자가 본문 폰트 5종, 글자 크기(14~20px), 코드 폰트 2종을 바꿀 수 있고 브라우저에 저장됩니다
-- 폰트 목록 수정: `.vitepress/theme/fonts.ts` (새 폰트를 추가하면 `.vitepress/config.mts`의 폰트 링크도 함께 추가)
+- 본문 폰트: Pretendard, 코드 폰트: JetBrains Mono (`.vitepress/theme/style.css`의 `--reader-font`, `--reader-code-font`)
+- 상단 GitHub 아이콘 링크: `.vitepress/config.mts`의 `themeConfig.github`
 
 ## 구조
 
@@ -68,9 +67,8 @@ draft: true                 # 선택: true면 목록에서 숨김
   theme/
     Layout.vue             전체 레이아웃
     posts.data.ts          빌드 시 글 목록 수집
-    fonts.ts               폰트 옵션
     style.css              디자인
-    components/            사이드바, 글 목록, 목차, 읽기 설정
+    components/            사이드바, 글 목록, 목차
 category/[slug].md         카테고리 페이지 (빌드 시 자동 생성)
 .github/workflows/deploy.yml
 ```

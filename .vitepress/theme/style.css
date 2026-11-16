@@ -355,83 +355,6 @@ html.dark .vp-code span { color: var(--shiki-dark); }
 .prose .custom-block.warning { border-color: #e4b74a66; background: #f5c34a1a; }
 .prose .custom-block.danger { border-color: #e2565666; background: #e256561a; }
 
-/* 읽기 설정 */
-.reader { position: relative; }
-.reader-btn .aa { display: inline-flex; align-items: baseline; white-space: nowrap; font-weight: 700; font-size: 15px; line-height: 1; }
-.reader-btn .aa small { font-size: 11px; margin-left: 1px; }
-.reader-panel {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  z-index: 40;
-  width: 300px;
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  box-shadow: 0 12px 32px rgba(15, 20, 30, 0.12), 0 2px 6px rgba(15, 20, 30, 0.06);
-}
-.rp-label { margin: 14px 0 8px; font-size: 12px; font-weight: 600; color: var(--text-3); }
-.rp-label:first-child { margin-top: 0; }
-.rp-fonts { display: flex; flex-direction: column; gap: 4px; }
-.rp-font {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 8px 10px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  background: none;
-  cursor: pointer;
-  text-align: left;
-}
-.rp-font:hover { background: var(--bg-hover); }
-.rp-font.on { border-color: var(--accent); background: var(--accent-soft); }
-.rp-sample { font-size: 17px; color: var(--text); }
-.rp-name { font-size: 12px; color: var(--text-3); font-family: var(--reader-font); }
-.rp-font.on .rp-name { color: var(--accent); }
-.rp-size { display: flex; align-items: center; gap: 10px; }
-.rp-step {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: none;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.rp-step.big { font-size: 17px; }
-.rp-step:hover:not(:disabled) { background: var(--bg-hover); }
-.rp-step:disabled { opacity: 0.35; cursor: default; }
-.rp-track { flex: 1; display: flex; justify-content: space-between; align-items: center; }
-.rp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); }
-.rp-dot.on { background: var(--accent); }
-.rp-val { min-width: 38px; text-align: right; font-size: 12px; color: var(--text-2); font-variant-numeric: tabular-nums; }
-.rp-code { display: flex; gap: 6px; flex-wrap: wrap; }
-.rp-chip {
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: none;
-  font-size: 13px;
-  cursor: pointer;
-}
-.rp-chip:hover { background: var(--bg-hover); }
-.rp-chip.on { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
-.rp-reset {
-  margin-top: 16px;
-  padding: 0;
-  border: 0;
-  background: none;
-  font-size: 12px;
-  color: var(--text-3);
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.rp-reset:hover { color: var(--text); }
-
 /* 반응형 */
 @media (max-width: 1180px) {
   .toc { display: none; }
@@ -456,5 +379,4 @@ html.dark .vp-code span { color: var(--shiki-dark); }
   .pi-thumb { flex-basis: 104px; }
   .pi-title { font-size: 16px; }
   .pi-desc { font-size: 14px; }
-  .reader-panel { right: -40px; width: min(300px, calc(100vw - 32px)); }
 }

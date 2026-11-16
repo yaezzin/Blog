@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: yaezzin/Blog
+  branch: main
+  commit_messages:
+    create: 'post: {{slug}} 작성'
+    update: 'post: {{slug}} 수정'
+    delete: 'post: {{slug}} 삭제'
+    uploadMedia: 'image: {{path}} 업로드'
+    deleteMedia: 'image: {{path}} 삭제'
+
+# 업로드한 이미지는 public/images 에 저장되고, 글에서는 /images/파일명 으로 연결됩니다
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: 글
+    label_singular: 글
+    description: 왼쪽 폴더가 블로그 카테고리입니다. 상위/하위 폴더를 선택한 뒤 새 글을 작성하세요.
+    folder: posts
+    create: true
+    nested:
+      subfolders: false
+    meta: { path: {} }
+    slug:
+      editable: [create]
+      hint: 글 주소가 됩니다. 영문 소문자와 하이픈을 권장해요 (예: orm-optimization)
+    sortable_fields: [date, title]
+    view_filters: []
+    summary: '{{date}} | {{title}}'
+    fields:
+      - { name: title, label: 제목 }
+      - name: date
+        label: 작성일
+        widget: datetime
+        format: YYYY-MM-DD
+        time_format: false
+        default: '{{now}}'
+      - { name: description, label: 한 줄 요약, required: false, hint: 글 목록에 표시됩니다 }
+      - { name: tags, label: 태그, widget: list, required: false }
+      - { name: draft, label: 임시저장 (목록에서 숨김), widget: boolean, default: false, required: false }
+      - { name: body, label: 본문, widget: markdown }

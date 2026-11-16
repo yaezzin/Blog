@@ -71,3 +71,19 @@ draft: true                 # 선택: true면 목록에서 숨김
 category/[slug].md         카테고리 페이지 (빌드 시 자동 생성)
 .github/workflows/deploy.yml
 ```
+
+## 웹에서 글쓰기 (Sveltia CMS)
+
+`https://yaezzin.github.io/Blog/admin/` 에서 브라우저로 글을 쓰고 수정할 수 있습니다. 저장하면 레포에 자동 커밋되고, 1~2분 뒤 블로그에 반영됩니다.
+
+로그인 토큰 만들기 (최초 1회)
+1. GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token
+2. Repository access: **Only select repositories** → `Blog`
+3. Permissions → Repository permissions → **Contents: Read and write**
+4. 생성된 토큰을 관리자 페이지의 **Sign In with Token**에 붙여넣기 (브라우저에 저장됨)
+
+사용법
+- 왼쪽 폴더 트리 = 카테고리. 폴더를 고르고 새 글을 만들면 그 카테고리에 저장됩니다
+- 새 카테고리는 CMS에서 폴더를 새로 만들면 생기고, 표시 이름/순서는 `.vitepress/categories.ts`에서 정합니다
+- 이미지는 에디터에서 바로 업로드 가능 (`public/images`에 저장)
+- 설정 파일: `public/admin/config.yml`

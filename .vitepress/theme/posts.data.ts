@@ -6,6 +6,7 @@ export interface Post {
   date: string
   description: string
   tags: string[]
+  thumbnail: string
   parent: string
   child: string | null
 }
@@ -34,6 +35,7 @@ export default createContentLoader('posts/**/*.md', {
           date: toDate(p.frontmatter.date),
           description: p.frontmatter.description ?? '',
           tags: p.frontmatter.tags ?? [],
+          thumbnail: p.frontmatter.thumbnail ?? '',
           parent: seg[0],
           child: seg.length >= 3 ? seg[1] : null
         }

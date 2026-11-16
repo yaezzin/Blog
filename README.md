@@ -38,11 +38,14 @@ title: 글 제목              # 필수: 본문에 # 제목은 따로 쓰지 않
 date: 2026-11-16            # 필수: 최신순 정렬 기준
 description: 목록에 보일 한 줄 요약
 tags: [django, orm]
+thumbnail: /images/orm.png    # 선택: 글 목록 카드에 표시될 이미지
 draft: true                 # 선택: true면 목록에서 숨김
 ---
 
 본문은 ## 소제목부터 시작하면 오른쪽 목차에 자동으로 잡힙니다.
 ```
+
+썸네일 이미지는 `public/images/`에 넣고 `/images/파일명`으로 적으면 됩니다. 외부 이미지 URL(https://...)도 가능해요.
 
 본문에서 쓸 수 있는 것: 일반 Markdown, 코드 블록(복사 버튼 포함), 표, 인용, `::: tip` / `::: warning` / `::: danger` 박스
 

@@ -29,6 +29,7 @@ collections:
     sortable_fields: [date, title]
     view_filters: []
     summary: '{{date}} | {{title}}'
+    thumbnail: thumbnail
     fields:
       - { name: title, label: 제목 }
       - name: date
@@ -38,6 +39,7 @@ collections:
         time_format: false
         default: '{{now}}'
       - { name: description, label: 한 줄 요약, required: false, hint: 글 목록에 표시됩니다 }
+      - { name: thumbnail, label: 썸네일 이미지, widget: image, required: false, hint: '글 목록 카드에 표시됩니다 (가로형 이미지 권장)' }
       - { name: tags, label: 태그, widget: list, required: false }
       - { name: draft, label: 임시저장 (목록에서 숨김), widget: boolean, default: false, required: false }
       - { name: body, label: 본문, widget: markdown }

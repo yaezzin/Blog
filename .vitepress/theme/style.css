@@ -153,6 +153,39 @@ button { font: inherit; color: inherit; }
 }
 .cat-link.child { padding: 6px 10px; }
 
+/* 프로필 */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 32px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+}
+.profile-avatar {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+.profile-avatar.initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.profile-text { min-width: 0; }
+.profile-text p { margin: 0; }
+.profile-name { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.profile-role { margin-top: 2px !important; font-size: 14px; color: var(--accent); font-weight: 500; }
+.profile-bio { margin-top: 8px !important; font-size: 15px; line-height: 1.6; color: var(--text-2); word-break: keep-all; }
+
 /* 목록 페이지 */
 .listing { max-width: var(--content-w); }
 .crumb { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-3); margin-bottom: 10px; }
@@ -375,6 +408,9 @@ html.dark .vp-code span { color: var(--shiki-dark); }
   .backdrop { position: fixed; inset: var(--topbar-h) 0 0 0; z-index: 20; background: rgba(0, 0, 0, 0.3); }
   .main { padding: 28px 20px 72px; }
   .page-title { font-size: 26px; }
+  .profile { gap: 14px; padding-bottom: 24px; margin-bottom: 28px; }
+  .profile-avatar { flex-basis: 56px; width: 56px; height: 56px; }
+  .profile-avatar.initials { font-size: 18px; }
   .post-item { gap: 14px; }
   .pi-thumb { flex-basis: 104px; }
   .pi-title { font-size: 16px; }

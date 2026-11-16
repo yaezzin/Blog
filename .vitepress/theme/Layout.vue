@@ -93,6 +93,15 @@ onUnmounted(() => document.removeEventListener('click', onCopyClick))
 
       <main class="main">
         <section v-if="pageType === 'home'" class="listing">
+          <div v-if="theme.profile" class="profile">
+            <img v-if="theme.profile.avatar" class="profile-avatar" :src="withBase(theme.profile.avatar)" alt="" />
+            <span v-else class="profile-avatar initials" aria-hidden="true">{{ theme.profile.initials }}</span>
+            <div class="profile-text">
+              <p class="profile-name">{{ theme.profile.name }}</p>
+              <p class="profile-role">{{ theme.profile.role }}</p>
+              <p class="profile-bio">{{ theme.profile.bio }}</p>
+            </div>
+          </div>
           <h1 class="page-title">전체 글</h1>
           <p class="page-sub">글 {{ posts.length }}개</p>
           <PostList :posts="posts" show-category />
